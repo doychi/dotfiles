@@ -1,0 +1,89 @@
+" Set Up an XDG compliant config
+set directory=$XDG_CACHE_HOME/vim,~/,/tmp
+set backupdir=$XDG_CACHE_HOME/vim,~/,/tmp
+set viminfo+=n$XDG_CACHE_HOME/vim/viminfo
+set runtimepath=$XDG_CONFIG_HOME/vim,$XDG_CONFIG_HOME/vim/after,$VIM,$VIMRUNTIME
+let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc"
+
+" NeoBundle Scripts -------------------------------------
+if has('vim_starting')
+    if &compatible
+        set nocompatible  " Be iMproved
+    endif
+
+    " Required:
+    set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+
+" Required:
+call neobundle#begin(expand('~/.vim/bundle'))
+
+" Let NeoBundle manage NeoBundle
+" Required:
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+" Add or remove your Bundles here:
+" Example NeoBundle 'Shougo/neosnippet.vim'
+" Example NeoBundle 'Shougo/neosnippet-snippets'
+" Exmaple NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
+NeoBundle 'Shougo/vimproc.vim', {
+            \ 'build' : {
+            \ 'windows' : 'tools\\update-dll-mingw',
+            \ 'cygwin' : 'make -f make_cygwin.mak',
+            \ 'mac' : 'make -f make_mac.mak',
+            \ 'linux' : 'make',
+            \ 'unix' : 'gmake',
+            \ },
+            \}
+
+" Unite and modules
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/unite-outline'
+NeoBundle 'Shougo/unite-help'
+NeoBundle 'Shougo/unite-session'
+
+" Google CodeFmt
+NeoBundle 'google/vim-maktaba'
+NeoBundle 'google/vim-codefmtlib'
+NeoBundle 'google/vim-codefmt'
+NeoBundle 'google/vim-glaive'
+"call glaive#Install()
+
+" Required:
+call neobundle#end()
+
+" Required:
+filetype plugin indent on
+
+
+" Vim5 and later versions support syntax highlighting. Uncommenting the next
+" line enables syntax highlighting by default.
+syntax on
+
+" The following are commented out as they cause vim to behave a lot
+" differently from regular Vi. They are highly recommended though.
+set showcmd		" Show (partial) command in status line.
+set showmatch		" Show matching brackets.
+set smartcase		" Do smart case matching
+set incsearch		" Incremental search
+set mouse=a		" Enable mouse usage (all modes)
+
+" Config vim to save backups/temp files in a single directory
+"set backupdir=~/.vim
+set dir=~/.vim/temp
+
+" Show the ruler and numbers
+set ruler
+set number
+
+" Set the tab configuration
+set shiftwidth=4
+set tabstop=4
+set expandtab
+
+set wrap
+
+set visualbell
+
+" Set the colours
+colorscheme desert

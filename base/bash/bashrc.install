@@ -1,0 +1,9 @@
+#!/bin/bash
+cat << EOF > ~/.bashrc
+#
+# Configure Bash to follow XDG more closely.
+if [ -f ~/.config/bash/bashrc ]; then
+    . ~/.config/bash/bashrc
+fi
+
+EOF
