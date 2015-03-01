@@ -114,6 +114,12 @@ if ! shopt -oq posix; then
   elif [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
   fi
+  #
+  # include dots completion file
+  #
+  if [ -f ~/.local/lib/dots/contrib/bash_completion ]; then
+      . ~/.local/lib/dots/contrib/bash_completion
+  fi
 fi
 
 export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'

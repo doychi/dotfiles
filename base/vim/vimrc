@@ -68,10 +68,6 @@ set smartcase		" Do smart case matching
 set incsearch		" Incremental search
 set mouse=a		" Enable mouse usage (all modes)
 
-" Config vim to save backups/temp files in a single directory
-"set backupdir=~/.vim
-set dir=~/.vim/temp
-
 " Show the ruler and numbers
 set ruler
 set number
