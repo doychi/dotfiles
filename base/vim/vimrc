@@ -1,6 +1,14 @@
 " Set Up an XDG compliant config
+if empty($XDG_CACHE_HOME)
+    let $XDG_CACHE_HOME="$HOME/.cache"
+endif
+if empty($XDG_CONFIG_HOME)
+    let $XDG_CONFIG_HOME="$HOME/.config"
+endif
+
 set directory=$XDG_CACHE_HOME/vim,~/,/tmp
 set backupdir=$XDG_CACHE_HOME/vim,~/,/tmp
+set undodir=$XDG_CACHE_HOME/vim,~/,/tmp
 set viminfo+=n$XDG_CACHE_HOME/vim/viminfo
 set runtimepath=$XDG_CONFIG_HOME/vim,$XDG_CONFIG_HOME/vim/after,$VIM,$VIMRUNTIME
 let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc"
@@ -16,7 +24,7 @@ if has('vim_starting')
 endif
 
 " Required:
-call neobundle#begin(expand("$XDG_CACHE_HOME/vim/bundle"))
+call neobundle#begin(expand('$XDG_CACHE_HOME/vim/bundle'))
 
 " Let NeoBundle manage NeoBundle
 " Required:
@@ -43,11 +51,10 @@ NeoBundle 'Shougo/unite-help'
 NeoBundle 'Shougo/unite-session'
 
 " Google CodeFmt
-NeoBundle 'google/vim-maktaba'
-NeoBundle 'google/vim-codefmtlib'
-NeoBundle 'google/vim-codefmt'
-NeoBundle 'google/vim-glaive'
-call glaive#Install()
+NeoBundle 'google/maktaba'
+NeoBundle 'google/glaive'
+NeoBundle 'google/vim-codefmtlib', {'name' : 'codefmtlib' }
+NeoBundle 'google/vim-codefmt', {'name' : 'codefmt'}
 
 
 " Required:
@@ -59,6 +66,9 @@ filetype plugin indent on
 " If there are uninstalled bundles found on startup,
 " this will conveniently prompt you to install them.
 NeoBundleCheck
+
+" Configure Glaive
+call glaive#Install()
 
 
 " Vim5 and later versions support syntax highlighting. Uncommenting the next
