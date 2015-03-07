@@ -22,10 +22,10 @@ call neobundle#begin(expand("$XDG_CACHE_HOME/vim/bundle"))
 " Required:
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-"" Add or remove your Bundles here:
-"" Example NeoBundle 'Shougo/neosnippet.vim'
-"" Example NeoBundle 'Shougo/neosnippet-snippets'
-"" Exmaple NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
+" Add or remove your Bundles here:
+" Example NeoBundle 'Shougo/neosnippet.vim'
+" Example NeoBundle 'Shougo/neosnippet-snippets'
+" Exmaple NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
 NeoBundle 'Shougo/vimproc.vim', {
             \ 'build' : {
             \ 'windows' : 'tools\\update-dll-mingw',
@@ -47,7 +47,8 @@ NeoBundle 'google/vim-maktaba'
 NeoBundle 'google/vim-codefmtlib'
 NeoBundle 'google/vim-codefmt'
 NeoBundle 'google/vim-glaive'
-"call glaive#Install()
+call glaive#Install()
+
 
 " Required:
 call neobundle#end()
