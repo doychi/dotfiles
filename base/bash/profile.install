@@ -1,0 +1,2 @@
+#!/bin/bash
+ln -s $XDG_CONFIG_HOME/bash/profile ~/.profile
