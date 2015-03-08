@@ -1,2 +1,8 @@
 #!/bin/bash
-ln -s $XDG_CONFIG_HOME/bash/bashrc ~/.bashrc
+
+src=$XDG_CONFIG_HOME/bash/bashrc
+link=~/.bashrc
+
+if [[ ! -e "$link" ]]; then
+    ln -s $src $link
+fi
