@@ -56,6 +56,9 @@ NeoBundle 'google/glaive'
 NeoBundle 'google/vim-codefmtlib', {'name' : 'codefmtlib' }
 NeoBundle 'google/vim-codefmt', {'name' : 'codefmt'}
 
+" Tabular
+NeoBundle 'godlygeek/tabular'
+
 
 " Required:
 call neobundle#end()
