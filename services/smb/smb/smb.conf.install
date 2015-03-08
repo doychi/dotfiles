@@ -1,0 +1,8 @@
+#!/bin/bash
+
+src=$XDG_CONFIG_HOME/smb
+link=~/.smb
+
+if [[ ! -e "$link" ]]; then
+    ln -s $src $link
+fi
