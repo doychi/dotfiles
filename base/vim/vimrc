@@ -59,6 +59,13 @@ NeoBundle 'google/vim-codefmt', {'name' : 'codefmt'}
 " Tabular
 NeoBundle 'godlygeek/tabular'
 
+" Fish shell script syntax highlighting
+NeoBundle 'dag/vim-fish'
+
+" Git plugins
+NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'tpope/vim-fugitive'
+
 
 " Required:
 call neobundle#end()
