@@ -79,6 +79,9 @@ xterm*|rxvt*)
     ;;
 esac
 
+# colored GCC warnings and errors
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
@@ -101,9 +104,13 @@ if ! shopt -oq posix; then
   #
   # include dots completion file
   #
-  if [ -f ~/.local/lib/dots/contrib/bash_completion ]; then
-      . ~/.local/lib/dots/contrib/bash_completion
+  if [ -f $HOME/.local/lib/dots/contrib/bash_completion ]; then
+      . $HOME/.local/lib/dots/contrib/bash_completion
   fi
 fi
+
+# Add Dots to the path
+source $HOME/.local/etc/init-dots
+
 
 export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
