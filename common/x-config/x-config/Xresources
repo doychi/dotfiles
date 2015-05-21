@@ -179,11 +179,12 @@ URxvt*underlineColor:                   yellow
 !URxvt*boldFont:                         -xos4-terminus-bold-*-*-*-14-*-*-*-*-*-iso8859-15,xft:terminus:bold:pixelsize:12
 !URxvt*italicFont:                       xft:Bitstream Vera Sans Mono:italic:autohint=true:pixelsize=12
 !URxvt*boldItalicFont:                   xft:Bitstream Vera Sans Mono:bold:italic:autohint=true:pixelsize=12
-URxvt*font:                              xft:Monospace:pixelsize=12
-URxvt*boldFont:                          xft:Monospace:bold:pixelsize=12
-URxvt*italicFont:                        xft:Monospace:italic:bold:pixelsize=12
-
-
+!URxvt*font:                              xft:Monospace:pixelsize=12
+!URxvt*boldFont:                          xft:Monospace:bold:pixelsize=12
+!URxvt*italicFont:                        xft:Monospace:italic:bold:pixelsize=12
+URxvt*font:                              xft:OpenDyslexicMono:pixelsize=11
+URxvt*boldFont:                          xft:OpenDyslexic:bold:pixelsize=11
+URxvt*italicFont:                        xft:OpenDyslexic:italic:bold:pixelsize=11
 
 
 
