@@ -3,6 +3,7 @@
 src=$XDG_CONFIG_HOME/x-config/Xresources
 link=~/.Xresources
 
-if [[ ! -e "$link" ]]; then
+if [[ ! -h "$link" ]]; then
+    mv $link ${link}.old
     ln -s $src $link
 fi
