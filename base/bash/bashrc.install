@@ -3,6 +3,7 @@
 src=$XDG_CONFIG_HOME/bash/bashrc
 link=~/.bashrc
 
+echo "Don't forget to add the xdg.sh file to the /etc/profile.d directory"
 if [[ ! -h "$link" ]]; then
     mv $link ${link}.old
     ln -s $src $link
