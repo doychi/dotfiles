@@ -15,7 +15,8 @@ I currently have configurations for:
 If you would like to be able to pull in any changes made to this template, you
 may use this as the base for your dotfiles repository.
 
-I use the following steps to get Dots up and running
+I use the following steps to get Dots up and running:
+
 1. Clone this repository git clone https://github.com/doychi/dots-personal
 2. Run source <repo location>/dosts-personal/init-dots
 3. dots groups set base 
