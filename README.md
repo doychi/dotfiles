@@ -17,11 +17,11 @@ may use this as the base for your dotfiles repository.
 
 I use the following steps to get Dots up and running:
 1. Clone this repository `git clone https://github.com/doychi/dots-personal`
-1. Run source `<repo location>/dosts-personal/init-dots`
-1. dots groups set base 
-1. dots install
-1. sudo cp ~/.local/etc/xdg.sh /etc/profile.d/
-1. logout
+2. Run source `<repo location>/dosts-personal/init-dots`
+3. dots groups set base 
+4. dots install
+5. sudo cp ~/.local/etc/xdg.sh /etc/profile.d/
+6. logout
 
 ### Useful Information
 * [dots README](https://github.com/EvanPurkhiser/dots/blob/master/README.md) -
@@ -30,5 +30,5 @@ I use the following steps to get Dots up and running:
   scripts](https://github.com/EvanPurkhiser/dots/blob/master/README.md#installation-scripts),
 which I am pretty confident could be quite complex and powerful 
 * [Extension
-  points](https://github.com/EvanPurkhiser/dots/blob/master/README.md#extending-configuration-files)
-  - I haven't used these yet, but I think they will be very useful in time.
+  points](https://github.com/EvanPurkhiser/dots/blob/master/README.md#extending-configuration-files) -
+   I haven't used these yet, but I think they will be very useful in time.
