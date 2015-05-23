@@ -26,9 +26,9 @@ I use the following steps to get Dots up and running:
 ### Useful Information
 * [dots README](https://github.com/EvanPurkhiser/dots/blob/master/README.md) -
   While not required, it's recommended to reading.
-* (Install
-  scripts)[https://github.com/EvanPurkhiser/dots/blob/master/README.md#installation-scripts],
+* [Install
+  scripts](https://github.com/EvanPurkhiser/dots/blob/master/README.md#installation-scripts),
 which I am pretty confident could be quite complex and powerful 
-* (Extension
-  points)[https://github.com/EvanPurkhiser/dots/blob/master/README.md#extending-configuration-files]
+* [Extension
+  points](https://github.com/EvanPurkhiser/dots/blob/master/README.md#extending-configuration-files)
   - I haven't used these yet, but I think they will be very useful in time.
