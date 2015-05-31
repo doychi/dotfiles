@@ -140,6 +140,9 @@ bar {
         status_command i3status
 }
 
+# Setup the clip board
+bindsym $mod+F2 exec xclip -o -selection clipboard | xclip
+bindsym $mod+F1 exec xclip -o | xclip -i -selection clipboard
 
 
 #
