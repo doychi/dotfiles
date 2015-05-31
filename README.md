@@ -16,12 +16,13 @@ If you would like to be able to pull in any changes made to this template, you
 may use this as the base for your dotfiles repository.
 
 I use the following steps to get Dots up and running:
+
 1. Clone this repository `git clone https://github.com/doychi/dots-personal`
 2. Run source `<repo location>/dosts-personal/init-dots`
-3. dots groups set base 
-4. dots install
-5. sudo cp ~/.local/etc/xdg.sh /etc/profile.d/
-6. logout
+3. `dots groups set base` 
+4. `dots install`
+5. `sudo cp ~/.local/etc/xdg.sh /etc/profile.d/`
+6. Logout
 
 ### Useful Information
 * [dots README](https://github.com/EvanPurkhiser/dots/blob/master/README.md) -
