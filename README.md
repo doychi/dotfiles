@@ -19,7 +19,7 @@ I use the following steps to get Dots up and running:
 
 1. Clone this repository `git clone https://github.com/doychi/dots-personal`
 2. Run source `<repo location>/dosts-personal/init-dots`
-3. `dots groups set base` 
+3. `dots groups set base` or any set of groups you need on the machine. 
 4. `dots install`
 5. `sudo cp ~/.local/etc/xdg.sh /etc/profile.d/`
 6. Logout
