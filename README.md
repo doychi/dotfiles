@@ -18,11 +18,14 @@ may use this as the base for your dotfiles repository.
 I use the following steps to get Dots up and running:
 
 1. Clone this repository `git clone https://github.com/doychi/dots-personal`
-2. Run source `<repo location>/dosts-personal/init-dots`
-3. `dots groups set base` or any set of groups you need on the machine. 
-4. `dots install`
-5. `sudo cp ~/.local/etc/xdg.sh /etc/profile.d/`
-6. Logout
+1. Run source `<repo location>/dosts-personal/init-dots`
+1. `dots groups set base` or any set of groups you need on the machine. 
+1. `dots install`
+1. `sudo cp ~/.local/etc/xdg.sh /etc/profile.d/`
+1. Logout
+1. `mkdir -p $XDG_CACHE_HOME/vim/bundle/neobundle.vim`
+1. `git clone https://github.com/Shougo/neobundle.vim $XDG_CACHE_HOME/vim/bundle/neobundle.vim`
+1. `vim +NeoBundleInstall +qall`
 
 ### Useful Information
 * [dots README](https://github.com/EvanPurkhiser/dots/blob/master/README.md) -

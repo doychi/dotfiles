@@ -1,5 +1,7 @@
 #!/bin/bash
 
-dir=$XDG_CACHE_HOME/bash/bashrc
+dir=$XDG_CACHE_HOME/vim/bundle/neobundle.vim
 
 mkdir -p $dir
+git clone https://github.com/Shougo/neobundle.vim $XDG_CACHE_HOME/vim/bundle/neobundle.vim
+vim +NeoBundleInstall +qall
