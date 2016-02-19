@@ -21,7 +21,7 @@ I use the following steps to get Dots up and running:
 1. Run source `<repo location>/dosts-personal/init-dots`
 1. `dots groups set base` or any set of groups you need on the machine. 
 1. `dots install`
-1. `sudo cp ~/.local/etc/xdg.sh /etc/profile.d/`
+1. `sudo cp ~/.local/etc/system-files/xdg.sh /etc/profile.d/`
 1. Logout
 1. `mkdir -p $XDG_CACHE_HOME/vim/bundle/neobundle.vim`
 1. `git clone https://github.com/Shougo/neobundle.vim $XDG_CACHE_HOME/vim/bundle/neobundle.vim`
