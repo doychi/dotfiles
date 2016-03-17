@@ -27,6 +27,8 @@ I use the following steps to get Dots up and running:
 1. `git clone https://github.com/Shougo/neobundle.vim $XDG_CACHE_HOME/vim/bundle/neobundle.vim`
 1. `vim +NeoBundleInstall +qall`
 
+**NB:** There may be some fiddling with sorting out the bashrc and profile files to make sure they are linked properly. This can be achieved by looking at the bashrc.install and profile.install files and setting up the appropraite links. 
+
 ### Useful Information
 * [dots README](https://github.com/EvanPurkhiser/dots/blob/master/README.md) -
   While not required, it's recommended to reading.
