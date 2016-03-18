@@ -117,7 +117,7 @@ autocmd FileType gitcommit,markdown setlocal spell
 
 " Set the colours
 set t_Co=256
-colorscheme desert256
+colorscheme refactor
 
 " Markdown
 autocmd BufNewFile,BufFilePre,BufRead *.md,*.markdown,*.mdown,*.mkd,*.mkdn,README.md  set filetype=markdown
