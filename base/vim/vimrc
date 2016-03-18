@@ -104,7 +104,10 @@ set shiftwidth=4
 set tabstop=4
 set expandtab
 
+" Set the default wrapping and 80 column highlighting
 set wrap
+set colorcolumn=81
+
 
 set visualbell
 
@@ -113,7 +116,12 @@ setglobal spell spelllang=en_au
 autocmd FileType gitcommit,markdown setlocal spell
 
 " Set the colours
-colorscheme desert
+set t_Co=256
+colorscheme desert256
 
 " Markdown
 autocmd BufNewFile,BufFilePre,BufRead *.md,*.markdown,*.mdown,*.mkd,*.mkdn,README.md  set filetype=markdown
+
+" Sort out the silly X11 clipboard
+set clipboard=unnamed
+

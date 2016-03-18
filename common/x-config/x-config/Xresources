@@ -13,7 +13,7 @@
 ! sed -e :a -e 'N;s/\n/@@/g;ta;P;D' | sed 's,\^\([^@]\+\)@*[\t ]*\([^\^]\+\),! \2\n! URxvt*\1\n\n,g' | sed 's,@@           ,\n           ,g' | sed 's,@*$,,g' |sed '/^[^!]/d'
 
 ! Specifies the terminal type name to be set in the TERM environment variable
-URxvt*termName:                         screen-256color
+URxvt*termName:                         rxvt-unicode-256color
 
 ! Create the window with the specified X window geometry [default 80x24]
 URxvt*geometry:                         240x84
@@ -179,9 +179,14 @@ URxvt*underlineColor:                   yellow
 !URxvt*boldFont:                         -xos4-terminus-bold-*-*-*-14-*-*-*-*-*-iso8859-15,xft:terminus:bold:pixelsize:12
 !URxvt*italicFont:                       xft:Bitstream Vera Sans Mono:italic:autohint=true:pixelsize=12
 !URxvt*boldItalicFont:                   xft:Bitstream Vera Sans Mono:bold:italic:autohint=true:pixelsize=12
-URxvt*font:                              xft:Monospace:pixelsize=10
-URxvt*boldFont:                          xft:Monospace:bold:pixelsize=10
-URxvt*italicFont:                        xft:Monospace:italic:bold:pixelsize=10
+!URxvt*font:                              xft:Monospace:autohint=true:pixelsize=10.5
+!URxvt*boldFont:                          xft:Monospace:bold:pixelsize=10.5
+!URxvt*italicFont:                        xft:Monospace:italic:italic:pixelsize=10.5
+!URxvt*boldItalicFont:                    xft:Monospace:italic:italic:bold:pixelsize=10.5
+URxvt*font:                              xft:DejaVu Sans Mono:style=Book:pixelsize=11
+URxvt*boldFont:                          xft:DejaVu Sans Mono:style=Bold:pixelsize=11
+URxvt*italicFont:                        xft:DejaVu Sans Mono:style=Oblique:pixelsize=11
+URxvt*boldItalicFont:                    xft:DejaVu Sans Mono:style=Bold Qbliue:pixelsize=11
 !URxvt*font:                              xft:OpenDyslexicMono:pixelsize=11
 !URxvt*boldFont:                          xft:OpenDyslexic:bold:pixelsize=11
 !URxvt*italicFont:                        xft:OpenDyslexic:italic:bold:pixelsize=11
@@ -258,7 +263,7 @@ URxvt*print-pipe:                       cat > $HOME/$(echo urxvt.dump.$(date +'%
 ! URxvt*perl-eval:                      perl-eval
 
 ! Comma-separated list(s) of perl extension scripts (default: "default") to use in this terminal instance, blank disables
-URxvt*perl-ext-common:                  default,clipboard
+URxvt*perl-ext-common:                  default,selection-to-clipboard
 URxvt*perl-ext:
 
 ! Specifies the program to be started with a URL argument. Used by the "selection-popup" and "matcher" perl extensions
