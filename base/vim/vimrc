@@ -66,6 +66,8 @@ NeoBundle 'dag/vim-fish'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'tpope/vim-fugitive'
 
+" Vim Cursor Word
+NeoBundle 'itchyny/vim-cursorword'
 
 " Required:
 call neobundle#end()
@@ -96,8 +98,10 @@ set mouse=a		" Enable mouse usage (all modes)
 
 " Show the ruler and numbers
 set ruler
-"set number
-set relativenumber	" Show the relative line number
+" Show the line number on the current line and relative line numbers
+" everywhere else.
+set number
+set relativenumber
 
 " Set the tab configuration
 set shiftwidth=4
