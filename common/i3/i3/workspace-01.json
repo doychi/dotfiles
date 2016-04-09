@@ -12,7 +12,7 @@
     "percent": 0.5,
     "swallows": [
        {
-        "class": "^URxvt$"
+        "class": "^UXTerm$"
        }
     ],
     "type": "con"
@@ -39,7 +39,7 @@
             "percent": 0.5,
             "swallows": [
                {
-                "class": "^URxvt$"
+                "class": "^UXTerm$"
                }
             ],
             "type": "con"
@@ -57,7 +57,7 @@
             "percent": 0.5,
             "swallows": [
                {
-                "class": "^URxvt$"
+                "class": "^UXTerm$"
                }
             ],
             "type": "con"
