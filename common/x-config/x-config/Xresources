@@ -108,7 +108,8 @@ URxvt*mouseWheelScrollPage:             false
 URxvt*background:                       Black
 
 !  Use the specified colour as the windows foreground colour [default Black]
-URxvt*foreground:                       LightYellow
+!URxvt*foreground:                       LightYellow
+URxvt*foreground:                       DarkGoldenrod
 
 ! Use the specified colour to disp1ay bold characters when the foreground colour is the default.
 ! URxvt*colorBD:                        color
