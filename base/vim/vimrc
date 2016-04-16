@@ -13,6 +13,13 @@ set viminfo+=n$XDG_CACHE_HOME/vim/viminfo
 set runtimepath=$XDG_CONFIG_HOME/vim,$XDG_CONFIG_HOME/vim/after,$VIM,$VIMRUNTIME
 let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc"
 
+" Map leader and localleader key to comma
+let mapleader = " "
+let g:mapleader = " "
+let maplocalleader = " "
+let g:maplocalleader = " "
+
+
 " NeoBundle Scripts -------------------------------------
 if has('vim_starting')
     if &compatible
@@ -49,6 +56,7 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/unite-outline'
 NeoBundle 'Shougo/unite-help'
 NeoBundle 'Shougo/unite-session'
+
 
 " Google CodeFmt
 NeoBundle 'google/maktaba'
@@ -127,5 +135,40 @@ colorscheme refactor
 autocmd BufNewFile,BufFilePre,BufRead *.md,*.markdown,*.mdown,*.mkd,*.mkdn,README.md  set filetype=markdown
 
 " Sort out the silly X11 clipboard
-set clipboard=unnamed
+if has ('unnamedplus')
+  set clipboard=unnamedplus
+else
+  set clipboard=unnamed
+endif
 
+"
+" Unite configuration
+"
+
+" Use The Platinum Searcher for grepping
+"if has('unix')
+"    if executable('pt')
+"      let g:unite_source_grep_command = 'pt'
+"      let g:unite_source_grep_default_opts = '--nogroup --nocolor'
+"      let g:unite_source_grep_recursive_opt = ''
+"      let g:unite_source_grep_encoding = 'utf-8'
+"    endif
+"endif
+"
+" Use the fuzzy matcher for everything
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+
+" Map ",g" to Unite buffer search
+nnoremap <silent> <LEADER>g :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
+" Map Control P to file searching
+nnoremap <C-P> :Unite file_rec/async<CR>
+" Map " /" to grep
+nnoremap <LEADER>/ :Unite grep:.<CR>
+" Map " y" to a yank ring esc setup.
+let g:unite_source_history_yank_enable = 1
+nnoremap <LEADER>y :Unite history/yank<CR>
+" Map " s" to buffer switching
+nnoremap <LEADER>s :Unite -quick-match buffer<CR>
+
+" Insert the date and time for posts
+map! <F5> <C-R>=strftime('%Y-%m-%d %H:%M')<CR>
