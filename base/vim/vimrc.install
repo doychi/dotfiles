@@ -4,6 +4,7 @@ dir=$XDG_CACHE_HOME/vim/bundle/neobundle.vim
 
 # If the NeoBundle directory exists, update it
 if [ -d ${dir} ]
+then
     cd ${dir}
     git pull origin master
 else
