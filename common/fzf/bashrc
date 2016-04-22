@@ -1,0 +1,6 @@
+#!/bin/bash
+
+#
+# Install the bash scripts for FZF
+#
+source /etc/fzf/shell/*.bash
