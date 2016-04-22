@@ -2,6 +2,13 @@
 
 dir=$XDG_CACHE_HOME/vim/bundle/neobundle.vim
 
-mkdir -p $dir
-git clone https://github.com/Shougo/neobundle.vim $XDG_CACHE_HOME/vim/bundle/neobundle.vim
+# If the NeoBundle directory exists, update it
+if [ -d ${dir} ]
+    cd ${dir}
+    git pull origin master
+else
+    mkdir -p ${dir}
+    git clone https://github.com/Shougo/neobundle.vim $XDG_CACHE_HOME/vim/bundle/neobundle.vim
+fi
+
 vim +NeoBundleInstall +qall
