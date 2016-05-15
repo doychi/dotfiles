@@ -1,3 +1,5 @@
+" Set up the default colours to be dark
+set background=dark
 " Set Up an XDG compliant config
 if empty($XDG_CACHE_HOME)
     let $XDG_CACHE_HOME="$HOME/.cache"
@@ -41,6 +43,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " Example NeoBundle 'Shougo/neosnippet.vim'
 " Example NeoBundle 'Shougo/neosnippet-snippets'
 " Exmaple NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
+
 NeoBundle 'Shougo/vimproc.vim', {
             \ 'build' : {
             \ 'windows' : 'tools\\update-dll-mingw',
@@ -175,3 +178,5 @@ nnoremap <LEADER>s :Unite -quick-match buffer<CR>
 
 " Insert the date and time for posts
 map! <F5> <C-R>=strftime('%Y-%m-%d %H:%M')<CR>
+
+let base16colorspace=256
