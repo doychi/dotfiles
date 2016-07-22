@@ -80,6 +80,8 @@ NeoBundle 'tpope/vim-fugitive'
 " Vim Cursor Word
 NeoBundle 'itchyny/vim-cursorword'
 
+!!@@bundles
+
 " Required:
 call neobundle#end()
 
