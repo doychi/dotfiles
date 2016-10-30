@@ -1,15 +1,22 @@
 #!/bin/bash
 
-dir=$XDG_CACHE_HOME/vim/bundle/neobundle.vim
+autoload_dir=$XDG_CONFIG_HOME/vim/autoload
+vim_plug_dir=$XDG_CACHE_HOME/vim/plugged
+file=${autoload_dir}/plug.vim
 
-# If the NeoBundle directory exists, update it
-if [ -d ${dir} ]
+vim_plug_create="mkdir -p $vim_plug_dir"
+autoload_create="mkdir -p $autoload_dir"
+
+# If the Vim-Plug file exists, update it
+if [ -f ${file} ]
 then
-    cd ${dir}
-    git pull origin master
+    echo "Vim-Plug already installed."
 else
-    mkdir -p ${dir}
-    git clone https://github.com/Shougo/neobundle.vim $XDG_CACHE_HOME/vim/bundle/neobundle.vim
-fi
+    echo ${vim_plug_create}
+    ${vim_plug_create}
+    echo ${autoload_create}
+    ${autoload_create}
+    curl -fLo ${file} --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim  
 
-vim +NeoBundleInstall +qall
+    vim +PlugInstall +qall
+fi
