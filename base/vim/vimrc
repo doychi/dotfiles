@@ -155,19 +155,22 @@ endif
 "    endif
 "endif
 "
-" Use the fuzzy matcher for everything
+" Use the fuzzy matcher for everything and sort them by rank
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
+call unite#filters#sorter_default#use(['sorter_rank'])
 
-" Map ",g" to Unite buffer search
+" Map "<LEADER>u" to start Unite interactive
+nnoremap <silent> <LEADER>u :<C-u>Unite<CR>
+" Map "<LEADER>g" to Unite buffer search
 nnoremap <silent> <LEADER>g :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
 " Map Control P to file searching
-nnoremap <C-P> :Unite file_rec/async<CR>
-" Map " /" to grep
+nnoremap <C-P> :Unite file_mru file_rec/async<CR>
+" Map "<LEADER>/" to grep
 nnoremap <LEADER>/ :Unite grep:.<CR>
-" Map " y" to a yank ring esc setup.
+" Map "<LEADER>y" to a yank ring esc setup.
 let g:unite_source_history_yank_enable = 1
 nnoremap <LEADER>y :Unite history/yank<CR>
-" Map " s" to buffer switching
+" Map "<LEADER>s" to buffer switching
 nnoremap <LEADER>s :Unite -quick-match buffer<CR>
 
 " Insert the date and time for posts

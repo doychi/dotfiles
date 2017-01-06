@@ -115,3 +115,6 @@ source $HOME/.local/etc/init-dots
 
 
 export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
