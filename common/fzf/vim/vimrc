@@ -1,0 +1,4 @@
+"
+" Install the FZF basic integration
+"
+source /etc/fzf/plugin/fzf.vim

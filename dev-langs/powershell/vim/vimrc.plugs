@@ -1,0 +1,2 @@
+" Add the PowerShell bundle
+NeoBundle 'PProvost/vim-ps1'
