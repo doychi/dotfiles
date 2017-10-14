@@ -2,6 +2,6 @@
 	name = Justin 'Doychi' Deutsch
 	email = doychi_dev@yahoo.com.au
 [core]
-	editor = vim
+	editor = nvim
 [commit]
     template = ~/.config/git/committemplate

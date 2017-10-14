@@ -3,9 +3,11 @@
 autoload_dir=$XDG_CONFIG_HOME/vim/autoload
 vim_plug_dir=$XDG_CACHE_HOME/vim/plugged
 file=${autoload_dir}/plug.vim
+nvim_spell=$XDG_DATA_HOME/nvim/site/spell
 
 vim_plug_create="mkdir -p $vim_plug_dir"
 autoload_create="mkdir -p $autoload_dir"
+nvim_spell_create="mkdir -p $nvim_spell"
 
 # If the Vim-Plug file exists, update it
 if [ -f ${file} ]
@@ -17,6 +19,8 @@ else
     echo ${autoload_create}
     ${autoload_create}
     curl -fLo ${file} --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim  
-
-    vim +PlugInstall +qall
+    echo ${nvim_spell_create}
+    ${nvim_spell_create}
 fi
+
+vim +PlugInstall +qall
