@@ -15,35 +15,40 @@ set viminfo+=n$XDG_CACHE_HOME/vim/viminfo
 set runtimepath=$XDG_CONFIG_HOME/vim,$XDG_CONFIG_HOME/vim/after,$VIM,$VIMRUNTIME
 let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc"
 
-" Map leader and localleader key to comma
-let mapleader = " "
-let g:mapleader = " "
-let maplocalleader = " "
-let g:maplocalleader = " "
+" Map leader and localleader key to space
+let mapleader = "\<SPACE>"
+let g:mapleader = "\<SPACE>"
+let maplocalleader = "\<SPACE>"
+let g:maplocalleader = "\<SPACE>"
 
 
 " Vim-Plug Scripts -------------------------------------
 " Required:
 call plug#begin(expand('$XDG_CACHE_HOME/vim/plugged'))
 
+" AsciiDoc support
+Plug 'asciidoc/vim-asciidoc'
+
+" Denite and modules
+
 " Unite and modules
-Plug 'Shougo/unite.vim'
-Plug 'Shougo/unite-outline'
-Plug 'Shougo/unite-help'
-Plug 'Shougo/unite-session'
+"Plug 'Shougo/unite.vim'
+"Plug 'Shougo/unite-outline'
+"Plug 'Shougo/unite-help'
+"Plug 'Shougo/unite-session'
 
 
 " Google CodeFmt
-Plug 'google/maktaba'
-Plug 'google/glaive'
-Plug 'google/vim-codefmtlib', {'name' : 'codefmtlib' }
-Plug 'google/vim-codefmt', {'name' : 'codefmt'}
+"Plug 'google/maktaba'
+"Plug 'google/glaive'
+"Plug 'google/vim-codefmtlib', {'name' : 'codefmtlib' }
+"Plug 'google/vim-codefmt', {'name' : 'codefmt'}
 
 " Tabular
-Plug 'godlygeek/tabular'
+"Plug 'godlygeek/tabular'
 
 " Fish shell script syntax highlighting
-Plug 'dag/vim-fish'
+"Plug 'dag/vim-fish'
 
 " Git plugins
 Plug 'airblade/vim-gitgutter'
@@ -63,7 +68,7 @@ if has('autocmd')
 endif
 
 " Configure Glaive
-call glaive#Install()
+"call glaive#Install()
 
 
 " Vim5 and later versions support syntax highlighting. Uncommenting the next
@@ -97,7 +102,7 @@ set wildmenu
 " Set the default wrapping and 80 column highlighting
 set wrap
 " set colorcolumn=81
-2mat ErrorMsg '\%81v.'
+"2mat ErrorMsg '\%81v.'
 
 set visualbell
 
@@ -130,7 +135,7 @@ set autoread
 
 " Configure Spelling
 setglobal spell spelllang=en_au
-autocmd FileType gitcommit,markdown setlocal spell
+autocmd FileType gitcommit,markdown,asciidoc setlocal spell
 
 " Set the colours
 set t_Co=256
@@ -162,22 +167,22 @@ endif
 "endif
 "
 " Use the fuzzy matcher for everything and sort them by rank
-call unite#filters#matcher_default#use(['matcher_fuzzy'])
-call unite#filters#sorter_default#use(['sorter_rank'])
+"call unite#filters#matcher_default#use(['matcher_fuzzy'])
+"call unite#filters#sorter_default#use(['sorter_rank'])
 
 " Map "<LEADER>u" to start Unite interactive
-nnoremap <silent> <LEADER>u :<C-u>Unite<CR>
+"nnoremap <silent> <LEADER>u :<C-u>Unite<CR>
 " Map "<LEADER>g" to Unite buffer search
-nnoremap <silent> <LEADER>g :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
+"nnoremap <silent> <LEADER>g :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
 " Map Control P to file searching
-nnoremap <C-P> :Unite file_mru file_rec/async<CR>
+"nnoremap <C-P> :Unite file_mru file_rec/async<CR>
 " Map "<LEADER>/" to grep
-nnoremap <LEADER>/ :Unite grep:.<CR>
+"nnoremap <LEADER>/ :Unite grep:.<CR>
 " Map "<LEADER>y" to a yank ring esc setup.
-let g:unite_source_history_yank_enable = 1
-nnoremap <LEADER>y :Unite history/yank<CR>
+"let g:unite_source_history_yank_enable = 1
+"nnoremap <LEADER>y :Unite history/yank<CR>
 " Map "<LEADER>s" to buffer switching
-nnoremap <LEADER>s :Unite -quick-match buffer<CR>
+"nnoremap <LEADER>s :Unite -quick-match buffer<CR>
 
 " Insert the date and time for posts
 map! <F5> <C-R>=strftime('%Y-%m-%d %H:%M:%S %z')<CR>
