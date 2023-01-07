@@ -1,0 +1,10 @@
+[credential]
+	helper = manager-core
+[core]
+	sshCommand = C:/Windows/System32/OpenSSH/ssh.exe
+	editor = nvim
+[user]
+	email = doychi@live.com.au
+	name = Doychi
+[color]
+	ui = true
