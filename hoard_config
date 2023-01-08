@@ -1,0 +1,29 @@
+# Doychi's Hoard configuration
+
+# Global ignores
+[config]
+  # Ignore the .git folder at any depth
+  ignore = ["**/.git"]
+
+[envs]
+# Operating systems
+macos = { os = ["macos"] }
+linux = { os = ["linux"] }
+windows = { os = ["windows"] }
+# Environment setup
+xdg_config_set = { env = [{ var = "XDG_CONFIG_HOME" }] }
+
+# Apps
+neovim = { exe_exists = ["nvim", "nvim-qt", "fvim"] }
+wezterm = { exe_exists = ["wezterm"] }
+
+[hoards]
+[hoards.hoard_config]
+  "linux" = "${HOME}/.config/hoard/config.toml"
+  "linux|xdg_config_set" = "${XDG_CONFIG_HOME}/hoard/config.toml"
+  "windows" = "${APPDATA}/shadow53/hoard/config/config.toml"
+
+[hoards.wezterm_config]
+  "linux" = "${HOME}/.wezterm.lua"
+  "linux|xdg_config_set" = "${XDG_CONFIG_HOME}/wezterm/wezterm.lua"
+  "windows" = "${USERPROFILE}/.config/wezterm/wezterm.lua"
