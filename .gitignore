@@ -1,0 +1,3 @@
+# Ignore Mac OS Hoard configuration files
+/config.toml
+/UUID

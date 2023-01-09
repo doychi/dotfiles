@@ -18,12 +18,23 @@ neovim = { exe_exists = ["nvim", "nvim-qt", "fvim"] }
 wezterm = { exe_exists = ["wezterm"] }
 
 [hoards]
+
+# Hoard configuration for all operating systems
 [hoards.hoard_config]
+  # WARNING this configuration uses a sym link for the macos environment,
+  # because the space charater in the path seems to cause an issue with finding
+  # the file. The actual path is: 
+  #
+  #     $HOME/Library/Application Support/com.shadow53.hoard/
+  #
+  "macos" = "${HOME}//.local/share/hoard/config.toml"
   "linux" = "${HOME}/.config/hoard/config.toml"
-  "linux|xdg_config_set" = "${XDG_CONFIG_HOME}/hoard/config.toml"
+  "linux|xdg_config_set"= "${XDG_CONFIG_HOME}/hoard/config.toml"
   "windows" = "${APPDATA}/shadow53/hoard/config/config.toml"
 
+# Westerm for all operating systems
 [hoards.wezterm_config]
+  "macos" = "${HOME}/.config/wezterm/wezterm.lua"
   "linux" = "${HOME}/.wezterm.lua"
   "linux|xdg_config_set" = "${XDG_CONFIG_HOME}/wezterm/wezterm.lua"
   "windows" = "${USERPROFILE}/.config/wezterm/wezterm.lua"

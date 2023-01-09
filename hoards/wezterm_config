@@ -1,6 +1,6 @@
 local wezterm = require 'wezterm';
 
-local default_prog = {}
+local default_prog
 
 -- Spawn powershell if on Windows
 if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
@@ -10,6 +10,7 @@ end
 return {
 	default_prog = default_prog,
 	font = wezterm.font_with_fallback {
+			'DejaVuSansMono Nerd Font',
 			'DejaVuSansMono NF',
 			'DaddyTimeMono NFM',
 	},
