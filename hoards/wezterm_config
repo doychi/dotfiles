@@ -1,19 +1,27 @@
 local wezterm = require 'wezterm';
 
-local default_prog
-local ft_list = {'DejaVuSansMono Nerd Font'}
-local ft_size = 11.
-local ln_height = 1.1
+-- Setup some sort cuts
 local os = wezterm.target_triple
+
+--
+-- Set up defauls
+--
+local default_prog
+
+-- Font defautls
+local ft_list = {'DejaVuSansMono Nerd Font','JetBrains Mono'}
+local ft_size = 11.0
+local ln_height = 1.1
+
 
 -- Spawn powershell if on Windows
 if os == 'x86_64-pc-windows-msvc' then
 	default_prog = { 'C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe', '' }
 end
 
--- Set up the appearance
+-- Set up the appearance for each OS
 if os == 'x86_64-pc-windows-msvc' then
-	ft_list = {'DejaVuSansMono NF'}
+	ft_list = {'DejaVuSansMono NF', 'JetBrains Mono'}
 	ft_size = 10.0
 	ln_height = 1.1
 end
@@ -23,7 +31,7 @@ return {
 --
 -- Appearance
 --
-	font = wezterm.font_with_fallback{ft_list},
+	font = wezterm.font_with_fallback(ft_list),
 	font_size = ft_size,
 	line_height = ln_height,
 
