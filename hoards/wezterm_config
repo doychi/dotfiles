@@ -1,19 +1,33 @@
 local wezterm = require 'wezterm';
 
 local default_prog
+local ft_list = {'DejaVuSansMono Nerd Font'}
+local ft_size = 11.
+local ln_height = 1.1
+local os = wezterm.target_triple
 
 -- Spawn powershell if on Windows
-if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
+if os == 'x86_64-pc-windows-msvc' then
 	default_prog = { 'C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe', '' }
+end
+
+-- Set up the appearance
+if os == 'x86_64-pc-windows-msvc' then
+	ft_list = {'DejaVuSansMono NF'}
+	ft_size = 10.0
+	ln_height = 1.1
 end
 
 return {
 	default_prog = default_prog,
-	font = wezterm.font_with_fallback {
-			'DejaVuSansMono Nerd Font',
-			'DejaVuSansMono NF',
-			'DaddyTimeMono NFM',
-	},
-	font_size = 11.0,
-	line_height = 1.1,
+--
+-- Appearance
+--
+	font = wezterm.font_with_fallback{ft_list},
+	font_size = ft_size,
+	line_height = ln_height,
+
+-- Colours
+	color_scheme = "Dracula (base16)",
+
 }
