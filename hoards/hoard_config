@@ -1,4 +1,14 @@
 # Doychi's Hoard configuration
+#
+# This configuration requires the following to be installed in your path:
+# * ripgrep
+# * git
+# * wezterm
+# * neovim
+# * Deja Vu Sans Mono
+#
+# tyring to tringger error
+#
 
 # Global ignores
 [config]
@@ -31,6 +41,13 @@ wezterm = { exe_exists = ["wezterm"] }
   "linux" = "${HOME}/.config/hoard/config.toml"
   "linux|xdg_config_set"= "${XDG_CONFIG_HOME}/hoard/config.toml"
   "windows" = "${APPDATA}/shadow53/hoard/config/config.toml"
+
+# Nvim for all operating systems
+[hoards.nvim_config]
+  "macos" = "${HOME}/.config/nvim/"
+  "linux" = "${HOME}/.config/nvim/"
+  "linux|xdg_config_set" = "${XDG_CONFIG_HOME}/nvim/"
+  "windows" = "${LOCALAPPDATA}/nvim/"
 
 # Westerm for all operating systems
 [hoards.wezterm_config]
